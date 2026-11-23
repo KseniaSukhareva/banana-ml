@@ -16,7 +16,7 @@ with st.sidebar:
     st.caption("Файл по умолчанию уже включён в проект. Для подготовки данных из исходной книги потребуется отдельный этап импорта.")
 
 try:
-    df = pd.read_csv(uploaded if uploaded else Path(__file__).parent / "data" / "banana_ml_dataset_v1.csv", encoding="utf-8-sig")
+    df = pd.read_csv(uploaded if uploaded else Path(__file__).parent / "banana_ml_dataset_v1.csv", encoding="utf-8-sig")
     df["storage_day"] = pd.to_numeric(df["storage_day"], errors="coerce")
     for target in TARGETS:
         df[target] = pd.to_numeric(df[target], errors="coerce")
